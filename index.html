@@ -61,7 +61,7 @@
       for (let i = 0; i < files.length; i++) {
         const processedImage = await removeBackground(files[i]);
         if (processedImage) {
-          imagesArray.push(processedImage); // Add the processed image to the array
+          imagesArray.push(processedImage); 
         } else {
           console.error("Background removal failed for file:", files[i].name);
         }
@@ -73,10 +73,10 @@
     async function removeBackground(imageFile) {
       const photoroomUrl = "https://image-api.photoroom.com/v2/edit";
       const photoroomFormData = new FormData();
-      photoroomFormData.append("background.color", "32353FFF"); // Set background color to transparent
-      photoroomFormData.append("outputSize", "200x200"); // Resize the output
-      photoroomFormData.append("padding", "10%"); // Add padding to the result
-      photoroomFormData.append("imageFile", imageFile); // Append the uploaded file
+      photoroomFormData.append("background.color", "333746"); 
+      photoroomFormData.append("outputSize", "200x200"); 
+      photoroomFormData.append("padding", "10%"); 
+      photoroomFormData.append("imageFile", imageFile); 
 
       try {
         const response = await fetch(photoroomUrl, {
